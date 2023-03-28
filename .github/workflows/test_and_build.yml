@@ -28,13 +28,13 @@ jobs:
           java-version: '17'
           #cache maven
 #Set up Maven cache
-- name: Cache Maven packages
+      - name: Cache Maven packages
   #this action allows caching the dependencies
-  uses: actions/cache@v3
-  with:
-    path: ~/.m2
-    key: ${{runner.os}}-m2-${{hashFiles('**/pom.xml')}}
-    restore-keys: ${{ runner.os }}-m2
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2
+          key: ${{runner.os}}-m2-${{hashFiles('**/pom.xml')}}
+          restore-keys: ${{ runner.os }}-m2
 
 #Run Tests
       - name: Run Tests
