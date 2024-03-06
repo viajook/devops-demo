@@ -1,7 +1,7 @@
-# Java version: 17
-ARG VARIANT=17
-FROM mcr.microsoft.com/vscode/devcontainers/java:${VARIANT}
+# Use Java 21 LTS
+ARG VARIANT=21
+FROM mcr.microsoft.com/devcontainers/java:${VARIANT}
 
 # Install Maven
-ARG MAVEN_VERSION="3.8.7"
+ARG MAVEN_VERSION="3.9.4"
 RUN su vscode -c "source /usr/local/sdkman/bin/sdkman-init.sh && sdk install maven \"${MAVEN_VERSION}\""
